@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Excuse Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1a1a2e;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #16213e;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      text-align: center;
+      max-width: 450px;
+      width: 90%;
+    }
+    h1 {
+      font-size: 1.5rem;
+      color: #00fff5;
+    }
+    p {
+      font-size: 1.1rem;
+      margin: 1.5rem 0;
+      min-height: 60px;
+      line-height: 1.5;
+    }
+    button {
+      background-color: #e94560;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button:hover {
+      background-color: #ff2e63;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🤖 Hackathon Excuse Generator</h1>
+    <p id="excuse">Click the button below to generate a developer excuse!</p>
+    <button onclick="generateExcuse()">Generate Excuse</button>
+  </div>
+
+  <script>
+    const excuses = [
+      "It worked perfectly on my local machine!",
+      "That's not a bug, it's an undocumented feature.",
+      "The AI hallucinated that piece of logic, not me.",
+      "I didn't break the code, the API changed mid-hackathon.",
+      "Vercel is just taking a few extra minutes to sync...",
+      "The Wi-Fi in the venue dropped right when I pushed to GitHub!",
+      "It's a hardware limitation, not a software bug."
+    ];
+
+    function generateExcuse() {
+      const randomIndex = Math.floor(Math.random() * excuses.length);
+      document.getElementById('excuse').innerText = `"${excuses[randomIndex]}"`;
+    }
+  </script>
+
+</body>
+</html>
